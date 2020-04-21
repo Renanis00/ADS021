@@ -5,33 +5,38 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Pesquisar Unidades</title>
     </h:head>
     <h:body>
         <h:form>
-            
-            <p:commandLink value="Incluir" action="#{alunoMB.incluir}"></p:commandLink>
+            <p:commandLink value="Incluir" action="#{cadastrarMorador.xhtml}"></p:commandLink>
 
 
-            <p:dataTable value="#{alunoMB.listar()}" var="aluno" paginator="true" rows="5" 
+            <p:dataTable var="aluno" paginator="true" rows="5" 
                          paginatorPosition="bottom">
-                <f:facet name="header">Pesquisar Areas do condominio</f:facet>
-                
-                
-                
+                <f:facet name="header">Lista de Unidades</f:facet>
                 <p:column>
-                    <f:facet name="header">Area</f:facet>
-                    <h:outputText value="#{aluno.matricula}" />
-                </p:column>
-                <p:column>
-                    <f:facet name="header">Situação</f:facet>
-                    <h:outputText value="#{aluno.nome}" />
+                    <f:facet name="header">Unidade</f:facet>
+                    <h:outputText value="" />
                 </p:column>
 
                 <p:column>
+                    <f:facet name="header">Proprietário</f:facet>
+                    <h:outputText value="" />
+                </p:column>
 
+                <p:column>
+                    <f:facet name="header">Email</f:facet>
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column>
+                    <f:facet name="header">Telefone</f:facet>
+                    <h:outputText value="" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Ações</f:facet>
                     <p:column>
-                        <f:facet name="header">Ações</f:facet>
                         <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
                             <f:param name="id" value="#{aluno.id}" />
                         </p:commandLink>
@@ -39,19 +44,8 @@
                             <f:param name="id" value="#{aluno.id}" />
                         </p:commandLink>
                     </p:column>
-
                 </p:column> 
-
             </p:dataTable>
-            <h:commandButton value="Novo" action="#"/>
-            <h:commandButton value="Editar" action="#"/>
-            <h:commandButton value="Remover" action="#"/>
-            <h:commandButton value="Fechar" action="#"/>
         </h:form>
-
-
-        <a href="/projetopi/faces/pages/CadastrarAreas.xhtml">Login page</a>
-        <a href="/projetopi/faces/pages/ReservarAreas.xhtml">Login page</a>
-
     </h:body>
 </html>
