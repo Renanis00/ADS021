@@ -34,18 +34,11 @@
                     <f:facet name="header">Telefone</f:facet>
                     <h:outputText value="" />
                 </p:column>
-                <p:column>
-                    <f:facet name="header">Ações</f:facet>
-                    <p:column>
-                        <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
-                            <f:param name="id" value="#{aluno.id}" />
-                        </p:commandLink>
-                        <p:commandLink value="Excluir" action="#{alunoMB.excluir}">
-                            <f:param name="id" value="#{aluno.id}" />
-                        </p:commandLink>
-                    </p:column>
-                </p:column> 
             </p:dataTable>
+            <h:commandButton value="Novo" action="#"/>
+            <h:commandButton value="Editar" action="#"/>
+            <h:commandButton value="Remover" action="#"/>
+            <h:commandButton value="Fechar" action="#"/>
         </h:form>
     </h:body>
 </html>
