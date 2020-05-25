@@ -8,17 +8,10 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:form>
-            
-            <p:commandLink value="Incluir" action="/pages/CadastrarAreas.jsf"></p:commandLink>
-
-
+        <h:form>          
             <p:dataTable value="#{alunoMB.listar()}" var="aluno" paginator="true" rows="5" 
                          paginatorPosition="bottom">
                 <f:facet name="header">Pesquisar Areas do condominio</f:facet>
-                
-                
-                
                 <p:column>
                     <f:facet name="header">Area</f:facet>
                     <h:outputText value="#{aluno.matricula}" />
@@ -27,9 +20,7 @@
                     <f:facet name="header">Situação</f:facet>
                     <h:outputText value="#{aluno.nome}" />
                 </p:column>
-
                 <p:column>
-
                     <p:column>
                         <f:facet name="header">Ações</f:facet>
                         <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
@@ -41,17 +32,12 @@
                     </p:column>
 
                 </p:column> 
-
             </p:dataTable>
-            <h:commandButton value="Novo." action="#"/>
-            <h:commandButton value="Editar" action="#"/>
-            <h:commandButton value="Remover" action="#"/>
-            <h:commandButton value="Fechar" action="#"/>
+            <p:commandButton value="Novo" action="#" style="margin-right: 10px" />
+            <p:commandButton value="Editar" action="#" style="margin-right: 10px" />
+            <p:commandButton value="Remover" action="#" style="margin-right: 10px"/>
+            <p:commandButton value="Fechar" action="#" />
         </h:form>
-
-
-        <a href="/projetopi/faces/pages/CadastrarAreas.xhtml">Login page</a>
-        <a href="/projetopi/faces/pages/ReservarAreas.xhtml">Login page</a>
 
     </h:body>
 </html>

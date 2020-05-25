@@ -19,25 +19,16 @@
                         <f:selectItem itemLabel="Condominio Vila Boa" itemValue="" />
                         <f:selectItem itemLabel="" itemValue="" />
                     </p:selectOneMenu>
-
-
                     <p:outputLabel value = "Area" />
                     <p:inputText/>
-
-
                     <p:outputLabel value = "Situação." />
-                    
-
                     <h:selectOneRadio id="ativo" value="#{bean.entidade.ativo}">
                         <f:selectItem itemValue="true" itemLabel="Ativo"/>
                         <f:selectItem itemValue="false" itemLabel="Inativo"/>
                     </h:selectOneRadio>
-
-
                 </p:panelGrid> 
-                <p:commandButton value = "Salvar" action="#{alunoMB.salvar}"/>
+                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{alunoMB.salvar}"/>
                 <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>
-
             </p:panel>
         </h:form>
     </h:body>

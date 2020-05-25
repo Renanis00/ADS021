@@ -15,27 +15,25 @@
                     <p:outputLabel for="selectOneB" value="Condominio" />
                     <p:selectOneMenu id="selectOneB" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="" />
-                        <f:selectItem itemLabel="" itemValue="" />
+                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="#{unidadeMB.unidade.condominio}" />
+                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="#{unidadeMB.unidade.condominio}" />
+                        <f:selectItem itemLabel="Condominio Fazenda do Norte" itemValue="#{unidadeMB.unidade.condominio}"/>
                     </p:selectOneMenu>
-
                     <p:outputLabel value = "Proprietário" />
-                    <p:inputText/>
+                    <p:inputText id="proprietario" value="#{unidadeMB.unidade.proprietario}"/>
 
                     <p:outputLabel value = "CPF"/>
-                    <p:inputText type="text"/>
+                    <p:inputText id="cpf" value="#{unidadeMB.unidade.cpf}"/>
 
                     <p:outputLabel value = "Email" />
-                    <p:inputText type="email"/>
+                    <p:inputText id="email" value="#{unidadeMB.unidade.email}"/>
 
                     <p:outputLabel value = "Telefone" />
-                    <p:inputText />
+                    <p:inputText id="telefone" value="#{unidadeMB.unidade.telefone}"/>
 
                 </p:panelGrid> 
-                <p:commandButton value = "Salvar" action="#{alunoMB.salvar}"/>
-                <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>
-
+                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{unidadeMB.salvar}"/>
+                <p:commandButton value = "Cancelar" action="#{unidadeMB.cancelar}"/>
             </p:panel>
         </h:form>
     </h:body>

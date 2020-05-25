@@ -20,13 +20,6 @@
                         <f:selectItem itemLabel="" itemValue="" />
                     </p:selectOneMenu>
 
-                    <p:outputLabel for="selectOneB" value="Condominio" />
-                    <p:selectOneMenu id="selectOneC" style="width: 225px">
-                        <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="" />
-                        <f:selectItem itemLabel="" itemValue="" />
-                    </p:selectOneMenu>
 
                     <p:outputLabel value = "Data Reserva" />
                     <p:inputText/>
@@ -42,9 +35,6 @@
                         <f:selectItem itemValue="true" itemLabel="Ativo"/>
                         <f:selectItem itemValue="false" itemLabel="Inativo"/>
                     </h:selectOneRadio>
-
-
-
                 </p:panelGrid> 
                 <p:commandButton value = "Salvar" action="#{alunoMB.salvar}"/>
                 <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>

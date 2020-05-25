@@ -11,14 +11,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet name="css/estilo.css"/>
     </h:head>
-    <h:body>
         <h:form>
-            <p:layout fullPage="true" >
+            <p:layout fullPage="true">
                 <p:layoutUnit id="top" position="north" size="70">
                     <p:menubar>
                         <p:submenu label="Cadastros">
                             <p:menuitem value="Areas" action="/pages/ConsultarAreas.jsf"/>
-                            <p:menuitem value="Item 2" action="#"/>
+                            <p:menuitem value="Item 2" action="/pages/Consultar"/>
                             <p:menuitem value="Item 3" action="#"/>
                         </p:submenu>
                         <f:facet name="options">
@@ -38,5 +37,4 @@
             </p:layout>
         </h:form>
         <h:outputScript name="js/script.js"/>
-    </h:body>
 </html>

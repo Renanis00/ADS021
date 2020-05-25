@@ -39,8 +39,13 @@
                     <p:outputLabel value = "Bairro" />
                     <p:inputText/>
 
-                    <p:outputLabel value = "Uf" />                   
-                    <p:inputText/>
+                    <p:outputLabel value = "UF" />                   
+                   <p:selectOneMenu id="uf" style="width: 225px">
+                        <f:selectItem itemLabel="Selecione" />
+                        <f:selectItem itemLabel="DF" itemValue="DF" />
+                        <f:selectItem itemLabel="GO" itemValue="GO" />
+                        <f:selectItem itemLabel="SP" itemValue="PA" />
+                    </p:selectOneMenu>
 
                     <p:outputLabel value = "Município" />
                     <p:inputText/>
