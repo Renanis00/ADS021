@@ -11,27 +11,35 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <h:outputStylesheet name="css/estilo.css"/>
     </h:head>
+    <h:body>
         <h:form>
+            <p:layout fullPage="true" >
+                <p:layoutUnit id="top" position="north" size="70"></p:layoutUnit>
                     <p:menubar>
-                        <p:submenu label="Cadastros" >
+                        <p:submenu label="Consultar" >
                             <p:menuitem value="Areas" action="/pages/ConsultarAreas.jsf"/>
-                            <p:menuitem value="Item 2" action="/pages/Consultar"/>
+                            <p:menuitem value="Unidades" action="/pages/ConsultarUnidades.jsf"/>
                             <p:menuitem value="Item 3" action="#"/>
                         </p:submenu>
+                        <p:submenu label="Cadastrar">
+                            <p:menuitem value="Unidades" action="/pages/CadastrarUnidades"/>
+                            <p:menuitem value="Areas" action="/pages/CadastrarAreas"/>
+                        </p:submenu>    
                         <f:facet name="options">
                             <h:outputText style="margin-right:20px" value="Olá #{usuarioMB.usuario.nome}"/>
                             <p:commandButton type="submit" value="Sair" icon="ui-icon-extlink" action="#{usuarioMB.sair}"/>
                         </f:facet>
                     </p:menubar>
 
-                <p:layoutUnit id="bottom" position="south" size="40">
-                    Copyright © 2020
-                </p:layoutUnit>
+                    <p:layoutUnit id="bottom" position="south" size="40">
+                        Copyright © 2020
+                    </p:layoutUnit>
 
-                <p:layoutUnit id="center" position="center">
-                    <ui:insert name="conteudo"/>
-                </p:layoutUnit>
+                    <p:layoutUnit id="center" position="center">
+                        <ui:insert name="conteudo"/>
+                    </p:layoutUnit>
             </p:layout>
         </h:form>
         <h:outputScript name="js/script.js"/>
+    </h:body>
 </html>

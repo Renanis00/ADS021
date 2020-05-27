@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Unidade implements Serializable {
     private String condominio;
+    private int numero;
     private String proprietario;
     private int cpf;
     private String email;
@@ -48,6 +49,16 @@ public class Unidade implements Serializable {
     public void setTelefone(int telefone) {
         this.telefone = telefone;
     }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+  
 
     
     

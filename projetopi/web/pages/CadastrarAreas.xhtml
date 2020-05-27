@@ -5,30 +5,31 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Cadastrar Condominios</title>
     </h:head>
     <h:body>
         <h:form>
             <p:panel header="Cadastrar Areas do Condominio"  style="text-align: center">
                 <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
 
-                    <p:outputLabel for="selectOneB" value="Condominio" />
-                    <p:selectOneMenu id="selectOneB" style="width: 225px">
+                    <p:outputLabel for="condominio" value="Condominio" />
+                    <p:selectOneMenu id="condominio" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="" />
-                        <f:selectItem itemLabel="" itemValue="" />
+                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="CPS" />
+                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="CVB" />
                     </p:selectOneMenu>
                     <p:outputLabel value = "Area" />
-                    <p:inputText/>
+                    <p:inputText id="area" value="#{areaMB.area.area}"/>
+                    <p:outputLabel value = "Tipo" />
+                    <p:inputText id="tipo" value="#{areaMB.area.tipo}"/>
                     <p:outputLabel value = "Situação." />
-                    <h:selectOneRadio id="ativo" value="#{bean.entidade.ativo}">
+                    <h:selectOneRadio id="ativo" value="#{areaMB.area.tipo}">
                         <f:selectItem itemValue="true" itemLabel="Ativo"/>
                         <f:selectItem itemValue="false" itemLabel="Inativo"/>
                     </h:selectOneRadio>
                 </p:panelGrid> 
-                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{alunoMB.salvar}"/>
-                <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>
+                <p:commandButton value = "Salvar" style="margin-right: 10px" action="/pages/ConsultarAreas.jsf"/>
+                <p:commandButton value = "Cancelar" action="#{areaMB.cancelar()}"/>
             </p:panel>
         </h:form>
     </h:body>

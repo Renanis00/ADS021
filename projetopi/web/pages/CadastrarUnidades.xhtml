@@ -12,12 +12,14 @@
             <p:panel header="Cadastrar Unidades"  style="text-align: center">
                 <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
 
-                    <p:outputLabel for="selectOneB" value="Condominio" />
-                    <p:selectOneMenu id="selectOneB" style="width: 225px">
+                    <p:outputLabel value="Unidade"/>
+                    <p:inputText id="numero" value="#{unidadeMB.unidade.numero}"/>
+                    <p:outputLabel for="condominio" value="Condominio" />
+                    <p:selectOneMenu id="condominio" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="#{unidadeMB.unidade.condominio}" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="#{unidadeMB.unidade.condominio}" />
-                        <f:selectItem itemLabel="Condominio Fazenda do Norte" itemValue="#{unidadeMB.unidade.condominio}"/>
+                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="CPS" />
+                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="CVB" />
+                        <f:selectItem itemLabel="Condominio Fazenda do Norte" itemValue="CFN"/>
                     </p:selectOneMenu>
                     <p:outputLabel value = "Proprietário" />
                     <p:inputText id="proprietario" value="#{unidadeMB.unidade.proprietario}"/>
@@ -33,7 +35,7 @@
 
                 </p:panelGrid> 
                 <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{unidadeMB.salvar}"/>
-                <p:commandButton value = "Cancelar" action="#{unidadeMB.cancelar}"/>
+                <p:commandButton value = "Cancelar" action="#{unidadeMB.cancelar()}"/>
             </p:panel>
         </h:form>
     </h:body>
