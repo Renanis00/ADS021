@@ -9,14 +9,14 @@
     </h:head>
     <h:body>
         <h:form>
-            <p:panel header="Cadastrar Areas do Condominio"  style="text-align: center">
+            <p:panel header="Cadastrar Áreas"  style="text-align: center">
                 <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
 
                     <p:outputLabel for="condominio" value="Condominio" />
                     <p:selectOneMenu id="condominio" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="CPS" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="CVB" />
+                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="1" />
+                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="2" />
                     </p:selectOneMenu>
                     <p:outputLabel value = "Area" />
                     <p:inputText id="area" value="#{areaMB.area.area}"/>
@@ -29,7 +29,7 @@
                     </h:selectOneRadio>
                 </p:panelGrid> 
                 <p:commandButton value = "Salvar" style="margin-right: 10px" action="/pages/ConsultarAreas.jsf"/>
-                <p:commandButton value = "Cancelar" action="#{areaMB.cancelar()}"/>
+                <p:commandButton value = "Cancelar" action="/pages/ConsultarAreas.jsp"/>
             </p:panel>
         </h:form>
     </h:body>

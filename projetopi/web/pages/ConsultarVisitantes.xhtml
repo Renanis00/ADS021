@@ -9,35 +9,28 @@
     </h:head>
     <h:body>
         <h:form>
-            
+
             <p:dataTable value="#{alunoMB.listar()}" var="aluno" paginator="true" rows="5" 
                          paginatorPosition="bottom">
                 <f:facet name="header">Pesquisar Visitantes</f:facet>
-                
+
                 <p:column>
-                    <f:facet name="header">Nome:</f:facet>
+                    <f:facet name="header">Unidade</f:facet>
                     <h:outputText value="#{aluno.matricula}" />
                 </p:column>
-
                 <p:column>
-
-                    <p:column>
-                        <f:facet name="header">Ações</f:facet>
-                        <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
-                            <f:param name="id" value="#{aluno.id}" />
-                        </p:commandLink>
-                        <p:commandLink value="Excluir" action="#{alunoMB.excluir}">
-                            <f:param name="id" value="#{aluno.id}" />
-                        </p:commandLink>
-                    </p:column>
-
-                </p:column> 
+                    <f:facet name="header">Visitante</f:facet>
+                    <h:outputText value="#{aluno.matricula}" />
+                </p:column>
+                <p:column>
+                    <f:facet name="header">RG</f:facet>
+                    <h:outputText value="#{aluno.matricula}" />
+                </p:column>
+                
 
             </p:dataTable>
             <p:commandButton value="Novo" action="#" style="margin-right: 10px" />
-            <p:commandButton value="Editar" action="#" style="margin-right: 10px" />
-            <p:commandButton value="Remover" action="#" style="margin-right: 10px"/>
-            <p:commandButton value="Fechar" action="#" />
+            <p:commandButton value="Voltar" action="/pages/index.jsp" />
         </h:form>
 
     </h:body>

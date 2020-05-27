@@ -29,11 +29,19 @@
                     <f:facet name="header">Telefone</f:facet>
                     <h:outputText value="#{unidadeMB.unidade.telefone}" />
                 </p:column>
+                <p:column>
+                        <f:facet name="header">Ações</f:facet>
+                        <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
+                            <f:param name="id" value="#{aluno.id}" />
+                        </p:commandLink>
+                        <p:commandLink value="Excluir" action="#{alunoMB.excluir}">
+                            <f:param name="id" value="#{aluno.id}" />
+                        </p:commandLink>
+                    </p:column>
+
             </p:dataTable>
             <p:commandButton value="Novo" action="/pages/CadastrarUnidades.jsp" style="margin-right: 10px" />
-            <p:commandButton value="Editar" action="#" style="margin-right: 10px" />
-            <p:commandButton value="Remover" action="#" style="margin-right: 10px"/>
-            <p:commandButton value="Fechar" action="#{unidadeMB.cancelar()}" />
+            <p:commandButton value="Voltar" action="/pages/index.jsp" />
         </h:form>
     </h:body>
 </html>
