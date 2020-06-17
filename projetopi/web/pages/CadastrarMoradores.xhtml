@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastrar Moradores</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Cadastrar Moradores"  style="text-align: center">
+                <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
+
+                    <p:outputLabel value = "Matrícula" />
+                    <p:inputText id="matricula" value="#{moradorMB.morador.matricula}"/>
+
+                    <p:outputLabel value = "Nome" />
+                    <p:inputText id="nome" value="#{moradorMB.morador.nome}"/>
+
+                    <p:outputLabel value = "Telefone" />
+                    <p:inputText id="telefone" value="#{moradorMB.morador.telefone}"/>
+
+                    <p:outputLabel value = "CPF" />
+                    <p:inputText id="cpf" value="#{moradorMB.morador.cpf}"/>
+
+                    <p:outputLabel value = "Email" />
+                    <p:inputText id="email" value="#{moradorMB.morador.email}"/>
+
+                    <p:outputLabel value = "Data Nascimento" />
+                    <p:inputText id="datanascimento" value="#{moradorMB.morador.datanascimento}"/>
+
+                    <p:outputLabel value = "Endereço" />
+                    <p:inputText id="endereco" value="#{moradorMB.morador.endereco}"/>
+
+                    <p:outputLabel value = "Cep" />
+                    <p:inputText id="cep" value="#{moradorMB.morador.cep}"/>
+
+                    <p:outputLabel value = "Bairro" />
+                    <p:inputText id="bairro" value="#{moradorMB.morador.bairro}"/>
+
+                    <p:outputLabel value = "UF" />                   
+                   <p:selectOneMenu id="uf" style="width: 225px">
+                        <f:selectItem itemLabel="Selecione" />
+                        <f:selectItem itemLabel="DF" itemValue="DF" />
+                        <f:selectItem itemLabel="GO" itemValue="GO" />
+                        <f:selectItem itemLabel="SP" itemValue="PA" />
+                    </p:selectOneMenu>
+
+                    <p:outputLabel value = "Município" />
+                    <p:inputText id="municipio" value="#{moradorMB.morador.municipio}"/>
+
+                </p:panelGrid> 
+                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{moradorMB.salvar}"/>
+                <p:commandButton value = "Cancelar" action="/pages/ConsultarMoradores.jsp"/>
+
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+
