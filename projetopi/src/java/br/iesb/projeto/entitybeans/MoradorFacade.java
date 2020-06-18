@@ -1,12 +1,11 @@
 package br.iesb.projeto.entitybeans;
 
-import entitybeans.AbstractFacade;
 import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class MoradorFacade extends AbstractFacade<Morador> {
 
-    @PersistenceContext(unitName = "projetopiPU")
     private EntityManager em;
 
     @Override
@@ -16,6 +15,8 @@ public class MoradorFacade extends AbstractFacade<Morador> {
 
     public MoradorFacade() {
         super(Morador.class);
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("projetopiPU");
+        em = emf.createEntityManager();    
     }
 
 }
