@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cadastrar Visitantes</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <p:panel header="Cadastrar Visitantes"  style="text-align: center">
+                <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
+
+                    <p:outputLabel value = "Nome:" />
+                    <p:inputText/>
+
+                    <p:outputLabel value = "Telefone:" />
+                    <p:inputText />
+
+                    <p:outputLabel value = "Unidade:" />
+                    <p:inputText/>
+
+                    <p:outputLabel for="selectOneB" value="Nome do Morador:" />
+                    <p:selectOneMenu id="selectOneB" style="width: 225px">
+                        <f:selectItem itemLabel="Selecione" />
+                        <f:selectItem itemLabel="Bruno Henrique Costa Gonçalves" itemValue="" />
+                        <f:selectItem itemLabel="Thiago Faustino" itemValue="" />
+                        <f:selectItem itemLabel="Jairo Leal" itemValue="" />
+                        <f:selectItem itemLabel="Renan Farias" itemValue="" />
+                        <f:selectItem itemLabel="" itemValue="" />
+                    </p:selectOneMenu>]
+                    
+                    <p:outputLabel value = "Motivo da Visita:" />
+                    <p:inputText/>
+
+                </p:panelGrid> 
+                <p:commandButton value = "Salvar" action="#{alunoMB.salvar}"/>
+                <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>
+
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>

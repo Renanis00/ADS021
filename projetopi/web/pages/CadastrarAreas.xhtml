@@ -13,11 +13,10 @@
                 <p:panelGrid columns = "2"  style="width: 400px; margin-left: auto; margin-right: auto;" >  
 
                     <p:outputLabel for="selectOneB" value="Condominio" />
-                    <p:selectOneMenu id="selectOneB" style="width: 225px">
+                    <p:selectOneMenu id="selectOneB" value="#{areaMB.area.condominio}" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
-                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="" />
-                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="" />
-                        <f:selectItem itemLabel="" itemValue="" />
+                        <f:selectItem itemLabel="Condominio Pôr do Sol" itemValue="1" />
+                        <f:selectItem itemLabel="Condominio Vila Boa" itemValue="2" />
                     </p:selectOneMenu>
 
 
@@ -25,18 +24,18 @@
                     <p:inputText/>
 
 
-                    <p:outputLabel value = "Situação." />
+                    <p:outputLabel value = "#{areaMB.area.area}" />
                     
 
-                    <h:selectOneRadio id="ativo" value="#{bean.entidade.ativo}">
+                    <h:selectOneRadio id="ativo" value="#{areaMB.area.situacao}">
                         <f:selectItem itemValue="true" itemLabel="Ativo"/>
                         <f:selectItem itemValue="false" itemLabel="Inativo"/>
                     </h:selectOneRadio>
 
 
                 </p:panelGrid> 
-                <p:commandButton value = "Salvar" action="#{alunoMB.salvar}"/>
-                <p:commandButton value = "Cancelar" action="#{alunoMB.salvar}"/>
+                <p:commandButton value = "Salvar" action="#{areaMB.salvar}"/>
+                <p:commandButton value = "Cancelar" action="#{areaMB.cancelar}"/>
 
             </p:panel>
         </h:form>

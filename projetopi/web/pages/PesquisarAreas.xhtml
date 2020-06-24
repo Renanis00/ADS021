@@ -10,10 +10,10 @@
     <h:body>
         <h:form>
             
-            <p:commandLink value="Incluir" action="#{alunoMB.incluir}"></p:commandLink>
+            <p:commandLink value="Incluir" action="#{areaMB.incluir}"></p:commandLink>
 
 
-            <p:dataTable value="#{alunoMB.listar()}" var="aluno" paginator="true" rows="5" 
+            <p:dataTable value="#{areaMB.listar()}" var="aluno" paginator="true" rows="5" 
                          paginatorPosition="bottom">
                 <f:facet name="header">Pesquisar Areas do condominio</f:facet>
                 
@@ -21,37 +21,31 @@
                 
                 <p:column>
                     <f:facet name="header">Area</f:facet>
-                    <h:outputText value="#{aluno.matricula}" />
+                    <h:outputText value="#{area.area}" />
                 </p:column>
                 <p:column>
                     <f:facet name="header">Situação</f:facet>
-                    <h:outputText value="#{aluno.nome}" />
+                    <h:outputText value="#{area.situacao}" />
                 </p:column>
 
                 <p:column>
 
                     <p:column>
                         <f:facet name="header">Ações</f:facet>
-                        <p:commandLink value="Alterar" action="#{alunoMB.alterar}">
-                            <f:param name="id" value="#{aluno.id}" />
+                        <p:commandLink value="Alterar" action="#{areaMB.alterar}">
+                            <f:param name="id" value="#{area.id}" />
                         </p:commandLink>
-                        <p:commandLink value="Excluir" action="#{alunoMB.excluir}">
-                            <f:param name="id" value="#{aluno.id}" />
+                        <p:commandLink value="Excluir" action="#{areaMB.excluir}">
+                            <f:param name="id" value="#{area.id}" />
                         </p:commandLink>
                     </p:column>
 
                 </p:column> 
 
             </p:dataTable>
-            <h:commandButton value="Novo." action="#"/>
-            <h:commandButton value="Editar" action="#"/>
-            <h:commandButton value="Remover" action="#"/>
-            <h:commandButton value="Fechar" action="#"/>
+            <h:commandButton value="Novo" action="#"/>
         </h:form>
 
-
-        <a href="/projetopi/faces/pages/CadastrarAreas.xhtml">Login page</a>
-        <a href="/projetopi/faces/pages/ReservarAreas.xhtml">Login page</a>
 
     </h:body>
 </html>

@@ -1,10 +1,15 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 21/04/2020, 02:18:06
-    Author     : dayor
-*/
-
+ .layout-wrapper .layout-menu-container .layout-menu > li {
+        margin-bottom: 0;
+    }
+    .layout-wrapper .layout-menu-container .layout-menu > li > a {
+        display: block;
+    }
+    .layout-wrapper .layout-menu-container .layout-menu > li.layout-root-menuitem {
+        margin-bottom: 16px;
+    }
+    .layout-wrapper .layout-menu-container .layout-menu > li.layout-root-menuitem > a {
+        display: none;
+    }
+    .layout-wrapper .layout-menu-container .layout-menu > li:not(.layout-root-menuitem) + li.layout-root-menuitem {
+        margin-top: 16px;
+    }
