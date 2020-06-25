@@ -12,7 +12,7 @@ import javax.faces.bean.SessionScoped;
  *
  * @author jairo
  */
-@ManagedBean(name = "AreaMB")
+@ManagedBean(name = "areaMB")
 @SessionScoped
 public class AreaMB implements Serializable {
     
@@ -51,9 +51,29 @@ public class AreaMB implements Serializable {
         return "/pages/index?faces-redirect=true";
     }
 
-    public String salvar() {
+ public String salvar(Area area) {
+        if (area.getId()==0) {
+            areaDAO.create(area);
+        } else {
+            areaDAO.edit(area);
+        }
+        lista = areaDAO.findAll();
+        return "PesquisarAreas";
+    }
+    
+  public String criar() {
+        this.area = new Area();
+        return "CadastrarAreas";
+    }
 
-        return "/pages/ConsultarCadastrarAreases?faces-redirect=true";
+     public String editar(Area area) {
+        this.area = area;
+        return "CadastrarAreas";
+    }
+   public void remover(Area are) {
+        areaDAO.remove(area);
+        this.lista = areaDAO.findAll();
     }
 
 }
+
