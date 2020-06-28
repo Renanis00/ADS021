@@ -27,9 +27,6 @@
                     <p:outputLabel value = "Email" />
                     <p:inputText id="email" value="#{moradorMB.morador.email}"/>
 
-                    <p:outputLabel value = "Data Nascimento" />
-                    <p:inputText id="datanascimento" value="#{moradorMB.morador.datanascimento}"/>
-
                     <p:outputLabel value = "Endereço" />
                     <p:inputText id="endereco" value="#{moradorMB.morador.endereco}"/>
 
@@ -40,7 +37,7 @@
                     <p:inputText id="bairro" value="#{moradorMB.morador.bairro}"/>
 
                     <p:outputLabel value = "UF" />                   
-                   <p:selectOneMenu id="uf" style="width: 225px">
+                   <p:selectOneMenu id="uf" value="#{moradorMB.morador.uf}" style="width: 225px">
                         <f:selectItem itemLabel="Selecione" />
                         <f:selectItem itemLabel="DF" itemValue="DF" />
                         <f:selectItem itemLabel="GO" itemValue="GO" />
@@ -51,7 +48,7 @@
                     <p:inputText id="municipio" value="#{moradorMB.morador.municipio}"/>
 
                 </p:panelGrid> 
-                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{moradorMB.salvar}"/>
+                <p:commandButton value = "Salvar" style="margin-right: 10px" action="#{moradorMB.salvar(moradorMB.morador, moradorMB.morador.id==0)}"/>
                 <p:commandButton value = "Cancelar" action="/pages/ConsultarMoradores.jsp"/>
 
             </p:panel>

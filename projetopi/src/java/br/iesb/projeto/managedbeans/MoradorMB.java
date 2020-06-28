@@ -1,12 +1,17 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.iesb.projeto.managedbeans;
 
 import br.iesb.projeto.entitybeans.Morador;
 import br.iesb.projeto.entitybeans.MoradorFacade;
-
-import java.io.Serializable;
 import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+
+
 
 /**
  *
@@ -14,14 +19,17 @@ import javax.faces.bean.SessionScoped;
  */
 @ManagedBean(name = "moradorMB")
 @SessionScoped
-public class MoradorMB implements Serializable {
-    
+public class MoradorMB {
+
     private MoradorFacade moradorDAO;
 
-    private static final long serialVersionUID = 1L;
+    private List<Morador> lista;
 
     private Morador morador;
-    private List<Morador> lista;
+
+    public MoradorMB() {
+       moradorDAO = new MoradorFacade(); 
+    }
 
     public List<Morador> getLista() {
         if (lista == null) {
@@ -34,11 +42,6 @@ public class MoradorMB implements Serializable {
         this.lista = lista;
     }
 
-    public MoradorMB() {
-        this.morador = new Morador();
-        this.moradorDAO = new MoradorFacade();
-    }
-
     public Morador getMorador() {
         return morador;
     }
@@ -47,13 +50,30 @@ public class MoradorMB implements Serializable {
         this.morador = morador;
     }
 
-    public String cancelar() {
-        return "/pages/index?faces-redirect=true";
+    public String criar() {
+        this.morador = new Morador();
+        return "CadastrarMoradores";
     }
 
-    public String salvar() {
+    public String editar(Morador morador) {
+        this.morador = morador;
+        return "CadastrarMoradores";
+    }
 
-        return "/pages/ConsultarMoradores?faces-redirect=true";
+    public void remover(Morador morador) {
+        moradorDAO.remove(morador);
+        this.lista = moradorDAO.findAll();
+
+    }
+
+    public String salvar(Morador morador, boolean novo) {
+        if (novo) {
+            moradorDAO.create(morador);
+        } else {
+            moradorDAO.edit(morador);
+        }
+        lista = moradorDAO.findAll();
+        return "ConsultarMoradores";
     }
 
 }

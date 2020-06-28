@@ -10,7 +10,7 @@
     <h:body>
         <h:form>
 
-            <p:dataTable value="#{moradorMB.lista}" var="morador" paginator="true" rows="5" 
+            <p:dataTable value="#{moradorMB.lista}" id="tabelaMorador" var="morador" paginator="true" rows="5" 
                          paginatorPosition="bottom">
                 <f:facet name="header">Lista de Moradores</f:facet>
                 <p:column>
@@ -32,22 +32,17 @@
                     <f:facet name="header">Cpf</f:facet>
                     <h:outputText value="#{morador.cpf}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">Email</f:facet>
                     <h:outputText value="#{morador.email}" />
-                </p:column>
-                
-                <p:column>
-                    <f:facet name="header">Data Nascimento</f:facet>
-                    <h:outputText value="#{morador.datanascimento}" />
                 </p:column>
 
                 <p:column>
                     <f:facet name="header">Endereço</f:facet>
                     <h:outputText value="#{morador.endereco}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">Cep</f:facet>
                     <h:outputText value="#{morador.cep}" />
@@ -62,24 +57,25 @@
                     <f:facet name="header">Uf</f:facet>
                     <h:outputText value="#{morador.uf}" />
                 </p:column>
-                
+
                 <p:column>
                     <f:facet name="header">Município</f:facet>
                     <h:outputText value="#{morador.municipio}" />
                 </p:column>
                 <p:column>
-                        <f:facet name="header">Ações</f:facet>
-                        <p:commandLink value="Alterar" action="#{moradorMB.alterar}">
-                            <f:param name="id" value="#{morador.id}" />
-                        </p:commandLink>
-                        <p:commandLink value="Excluir" action="#{moradorMB.excluir}">
-                            <f:param name="id" value="#{morador.id}" />
-                        </p:commandLink>
-                    </p:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <p:commandLink value="Alterar" action="#{moradorMB.editar(morador)}">
+                    </p:commandLink>
+                    <h:outputText value=" | "/>
+                    <p:commandLink value="Excluir" action="#{moradorMB.remover(morador)}" update="tabelaMorador">
+                    </p:commandLink>
+                    
+                    
+                </p:column>
 
-  
+
             </p:dataTable>
-            <p:commandButton value="Novo" action="/pages/CadastrarMoradores.jsp" style="margin-right: 10px" />
+            <p:commandButton value="Novo" action="#{moradorMB.criar()}" style="margin-right: 10px" />
             <p:commandButton value="Voltar" action="/pages/index.jsp" />
         </h:form>
     </h:body>

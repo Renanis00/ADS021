@@ -6,7 +6,6 @@
 package br.iesb.projeto.entitybeans;
 
 import java.io.Serializable;
-import java.util.Date;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,8 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -35,7 +32,6 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Morador.findByTelefone", query = "SELECT m FROM Morador m WHERE m.telefone = :telefone")
     , @NamedQuery(name = "Morador.findByCpf", query = "SELECT m FROM Morador m WHERE m.cpf = :cpf")
     , @NamedQuery(name = "Morador.findByEmail", query = "SELECT m FROM Morador m WHERE m.email = :email")
-    , @NamedQuery(name = "Morador.findByDatanascimento", query = "SELECT m FROM Morador m WHERE m.datanascimento = :datanascimento")
     , @NamedQuery(name = "Morador.findByEndereco", query = "SELECT m FROM Morador m WHERE m.endereco = :endereco")
     , @NamedQuery(name = "Morador.findByCep", query = "SELECT m FROM Morador m WHERE m.cep = :cep")
     , @NamedQuery(name = "Morador.findByBairro", query = "SELECT m FROM Morador m WHERE m.bairro = :bairro")
@@ -65,10 +61,6 @@ public class Morador implements Serializable {
     @Column(name = "email")
     private String email;
     @Basic(optional = false)
-    @Column(name = "datanascimento")
-    @Temporal(TemporalType.DATE)
-    private Date datanascimento;
-    @Basic(optional = false)
     @Column(name = "endereco")
     private String endereco;
     @Basic(optional = false)
@@ -91,14 +83,13 @@ public class Morador implements Serializable {
         this.id = id;
     }
 
-    public Morador(Integer id, int matricula, String nome, int telefone, int cpf, String email, Date datanascimento, String endereco, int cep, String bairro, String uf, String municipio) {
+    public Morador(Integer id, int matricula, String nome, int telefone, int cpf, String email, String endereco, int cep, String bairro, String uf, String municipio) {
         this.id = id;
         this.matricula = matricula;
         this.nome = nome;
         this.telefone = telefone;
         this.cpf = cpf;
         this.email = email;
-        this.datanascimento = datanascimento;
         this.endereco = endereco;
         this.cep = cep;
         this.bairro = bairro;
@@ -152,14 +143,6 @@ public class Morador implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Date getDatanascimento() {
-        return datanascimento;
-    }
-
-    public void setDatanascimento(Date datanascimento) {
-        this.datanascimento = datanascimento;
     }
 
     public String getEndereco() {
